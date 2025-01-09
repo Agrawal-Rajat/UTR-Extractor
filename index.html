@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UTR Extractor</title>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <h1>Upload Payment Confirmation Screenshot</h1>
+    <form id="upload-form">
+        <input type="file" id="image-upload" accept="image/*">
+        <button type="button" onclick="processImage()">Extract UTR</button>
+    </form>
+    <p id="result"></p>
+    <script src="script.js"></script>
+</body>
+</html>
