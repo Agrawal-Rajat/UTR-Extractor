@@ -21,8 +21,7 @@ function processImage() {
 }
 
 function extractUTR(text) {
-    // Use regex to find UTR patterns (customize as needed)
-    const utrPattern = /\b\d{12}\b/; // Match exactly 12 digits
+    const utrPattern = /\b\d{12}\b/; 
     const match = text.match(utrPattern);
     return match ? match[0] : null;
 }
