@@ -1,41 +1,46 @@
 /* General Styling */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e6f7ff, #ffffff);
     color: #333;
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    flex-direction: column;
 }
 
 /* Page Title */
 h1 {
-    color: #4CAF50;
-    font-size: 2em;
+    color: #2C7A7B;
+    font-size: 2.2em;
+    font-weight: 600;
     margin-bottom: 20px;
     text-align: center;
+    letter-spacing: 1px;
 }
 
-/* Form Styling */
+/* Form Styling - Glassmorphism */
 form {
-    background-color: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 /* Labels */
 label {
     font-size: 1em;
-    font-weight: bold;
-    color: #555;
+    font-weight: 600;
+    color: #2C3E50;
     display: block;
     margin-top: 15px;
     text-align: left;
@@ -44,50 +49,64 @@ label {
 /* Input Fields */
 input, select {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: none;
+    border-radius: 8px;
     font-size: 1em;
-    transition: border-color 0.3s ease;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
 }
 
 input:focus, select:focus {
-    border-color: #4CAF50;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 10px rgba(44, 122, 123, 0.3);
     outline: none;
 }
 
 /* File Upload */
 #image-upload {
-    border: 1px dashed #4CAF50;
-    padding: 10px;
-    background-color: #f9f9f9;
+    border: 2px dashed #2C7A7B;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.7);
     text-align: center;
     cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#image-upload:hover {
+    background-color: rgba(44, 122, 123, 0.1);
+    border-color: #2C7A7B;
 }
 
 /* Disabled Input (Extracted UTR) */
 #utr {
-    background-color: #e9ecef;
+    background-color: rgba(200, 200, 200, 0.4);
     cursor: not-allowed;
+    opacity: 0.8;
 }
 
 /* Buttons */
 button {
     width: 100%;
     padding: 12px;
-    background-color: #4CAF50;
+    background: linear-gradient(135deg, #2C7A7B, #196b6e);
     color: white;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 8px;
     font-size: 1em;
-    margin-top: 15px;
-    transition: background-color 0.3s ease, transform 0.2s;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
 }
 
 button:hover {
-    background-color: #45a049;
+    background: linear-gradient(135deg, #249898, #1e5859);
+    transform: scale(1.03);
+    box-shadow: 0px 5px 15px rgba(44, 122, 123, 0.3);
 }
 
 button:active {
@@ -98,6 +117,14 @@ button:active {
 @media (max-width: 600px) {
     form {
         width: 90%;
-        padding: 20px;
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    input, select, button {
+        font-size: 0.95em;
     }
 }
