@@ -4,15 +4,34 @@
     <title>UTR Extractor</title>
     <script src="https://cdn.jsdelivr.net/npm/tesseract.js"></script>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-    <h1>Upload Payment Confirmation Screenshot</h1>
+    <h1>Payment Confirmation Form</h1>
     <form id="upload-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="enrollment">Enrollment Number:</label>
+        <input type="text" id="enrollment" name="enrollment" required>
+
+        <label for="college-year">College Year:</label>
+        <select id="college-year" name="college-year" required>
+            <option value="" disabled selected>Select Year</option>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+            <option value="4">4th Year</option>
+        </select>
+
+        <label for="image-upload">Upload Payment Screenshot:</label>
         <input type="file" id="image-upload" accept="image/*">
-        <button type="button" onclick="processImage()">Extract UTR</button>
+
+        <label for="utr">Extracted UTR:</label>
+        <input type="text" id="utr" name="utr" readonly>
+
+        <button type="submit">Submit</button>
     </form>
-    <p id="result"></p>
+
     <script src="script.js"></script>
 </body>
 </html>

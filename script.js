@@ -1,21 +1,22 @@
+document.getElementById('image-upload').addEventListener('change', function() {
+    processImage();
+});
+
 function processImage() {
     const imageInput = document.getElementById('image-upload').files[0];
-    if (!imageInput) {
-        alert('Please upload an image!');
-        return;
-    }
+    if (!imageInput) return;
+
     const reader = new FileReader();
     reader.onload = function () {
         const image = new Image();
         image.src = reader.result;
+
         Tesseract.recognize(image.src, 'eng')
             .then(({ data: { text } }) => {
                 const utr = extractUTR(text);
-                document.getElementById('result').innerText = utr
-                    ? `Extracted UTR: ${utr}`
-                    : 'UTR not found!';
+                document.getElementById('utr').value = utr || "UTR not found";
             })
-            .catch((error) => console.error(error));
+            .catch(error => console.error(error));
     };
     reader.readAsDataURL(imageInput);
 }

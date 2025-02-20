@@ -1,7 +1,7 @@
 /* General Styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
+    background-color: #f4f4f4;
     color: #333;
     margin: 0;
     padding: 0;
@@ -23,59 +23,81 @@ h1 {
 /* Form Styling */
 form {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: inline-block;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
     text-align: center;
 }
 
-/* Input File */
-#image-upload {
-    margin: 10px 0;
-    padding: 8px;
+/* Labels */
+label {
+    font-size: 1em;
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-top: 15px;
+    text-align: left;
+}
+
+/* Input Fields */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
+    transition: border-color 0.3s ease;
 }
 
-/* Button */
+input:focus, select:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* File Upload */
+#image-upload {
+    border: 1px dashed #4CAF50;
+    padding: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Disabled Input (Extracted UTR) */
+#utr {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+/* Buttons */
 button {
-    padding: 10px 20px;
+    width: 100%;
+    padding: 12px;
     background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
-    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s;
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-/* Result Display */
-#result {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #555;
-    text-align: center;
+button:active {
+    transform: scale(0.98);
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-
+@media (max-width: 600px) {
     form {
         width: 90%;
-        padding: 15px;
-    }
-
-    button {
-        width: 100%;
-        font-size: 1em;
+        padding: 20px;
     }
 }
